@@ -1,20 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import {CommentsContainer, CommentsHeader} from '../components/ui'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <section className="w-full bg-red-300  min-h-screen grid grid-cols-12 poppins-light">
+      <div className=" col-start-1 col-end-13 md:col-start-4 md:col-end-10 min-h-full bg-red-600 grid grid-cols-12 grid-rows-12">
+        <div className="rounded-md col-start-2 col-end-12 md:col-start-4 md:col-end-10 bg-white m-4 row-start-2 row-end-13 grid grid-rows-10 grid-cols-12 pl-8">
+          <div className="row-start-1 col-span-12 grid grid-cols-12 p-1 ">
+            {/* <!-- comments-header --> */}
+            <CommentsHeader/>
+          </div>
+          {/* <!-- comments-container --> */}
+          <CommentsContainer/>
+
+        </div>
       </div>
-    </>
-  )
+    </section>
+  );
 }
 
-export default App
+export default App;
